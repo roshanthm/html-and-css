@@ -1,0 +1,125 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #121212;
+  color: #ffffff;
+}
+
+header {
+  background: linear-gradient(135deg, #1e1e2f, #2d2d44);
+  padding: 80px 20px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #6cf;
+}
+
+header p {
+  font-size: 1.2rem;
+  color: #ccc;
+}
+
+header button {
+  margin-top: 20px;
+  padding: 10px 25px;
+  background-color: #6cf;
+  border: none;
+  border-radius: 25px;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+header button:hover {
+  background-color: #4ab3e6;
+}
+
+nav {
+  background: #1a1a2e;
+  padding: 10px 0;
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+nav a {
+  color: #ccc;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+nav a:hover {
+  color: #6cf;
+}
+
+section {
+  padding: 60px 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+section h2 {
+  font-size: 2rem;
+  color: #6cf;
+  margin-bottom: 20px;
+}
+
+.skills ul, .projects ul {
+  list-style-type: square;
+  padding-left: 20px;
+}
+
+.education .edu-item {
+  background-color: #1e1e2e;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-left: 5px solid #6cf;
+  border-radius: 5px;
+}
+
+.education .edu-item h3 {
+  color: #fff;
+}
+
+.education .edu-item p {
+  color: #ccc;
+  margin-top: 5px;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contact-info a {
+  color: #6cf;
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #111;
+  color: #777;
+  font-size: 0.9rem;
+}
