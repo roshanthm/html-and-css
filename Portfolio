@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Saniya Susan Varkey - Resume</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header>
+    <h1>Saniya Susan Varkey</h1>
+    <p>Passionate Developer | Problem Solver | Tech Enthusiast</p>
+    <button onclick="scrollToSection('contact')">Contact Me</button>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Hello! I’m Saniya Susan Varkey, a dedicated and enthusiastic developer passionate about building innovative software. I enjoy solving problems, exploring new technologies, and pushing the limits of what's possible through code.</p>
+  </section>
+
+  <section id="skills" class="skills">
+    <h2>Skills</h2>
+    <ul>
+      <li>HTML, CSS, JavaScript</li>
+      <li>React.js & Node.js</li>
+      <li>Python & C++</li>
+      <li>Git & GitHub</li>
+    </ul>
+  </section>
+
+  <section id="education" class="education">
+    <h2>Education</h2>
+    <div class="edu-item">
+      <h3>Bachelor of Technology in Computer Science</h3>
+      <p>Amal Jyothi Engineering College, 2024 - Present</p>
+    </div>
+    <div class="edu-item">
+      <h3>Higher Secondary (Bio-Science)</h3>
+      <p>Little Flower Public School Kollamula</p>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact</h2>
+    <div class="contact-info">
+      <p><strong>Email:</strong> <a href="mailto:saniyasusanvarkey@gmail.com">saniyasusanvarkey@gmail.com</a></p>
+      <p><strong>Phone:</strong> <a href="tel:+918606471610">+91 8606471610</a></p>
+      <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/saniya-susan-varkey-485877326/" target="_blank">LinkedIn Profile</a></p>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Saniya Susan Varkey. All rights reserved.
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
