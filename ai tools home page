@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top AI Tools Collection</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);
+        }
+        .category-btn.active {
+            background-color: #4f46e5;
+            color: white;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-12 px-4">
+        <div class="container mx-auto text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Explore Powerful AI Tools</h1>
+            <p class="text-xl md:text-2xl max-w-3xl mx-auto">Discover cutting-edge artificial intelligence solutions for every need</p>
+            <div class="mt-8 relative max-w-md mx-auto">
+                <input type="text" placeholder="Search AI tools..." class="w-full py-3 px-4 rounded-full text-gray-800 focus:outline-none shadow-lg">
+                <button class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-indigo-700 hover:bg-indigo-800 text-white p-2 rounded-full">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-12">
+        <!-- Categories -->
+        <div class="mb-12 overflow-x-auto">
+            <div class="flex space-x-4 pb-2">
+                <button class="category-btn active px-6 py-2 rounded-full bg-indigo-100 text-indigo-800 font-medium whitespace-nowrap transition-all" onclick="filterTools('all')">
+                    <i class="fas fa-list mr-2"></i> All Categories
+                </button>
+                <button class="category-btn px-6 py-2 rounded-full bg-gray-100 text-gray-800 font-medium whitespace-nowrap hover:bg-gray-200 transition-all" onclick="filterTools('productivity')">
+                    <i class="fas fa-bolt mr-2"></i> Productivity
+                </button>
+                <button class="category-btn px-6 py-2 rounded-full bg-gray-100 text-gray-800 font-medium whitespace-nowrap hover:bg-gray-200 transition-all" onclick="filterTools('design')">
+                    <i class="fas fa-paint-brush mr-2"></i> Design
+                </button>
+                <button class="category-btn px-6 py-2 rounded-full bg-gray-100 text-gray-800 font-medium whitespace-nowrap hover:bg-gray-200 transition-all" onclick="filterTools('writing')">
+                    <i class="fas fa-keyboard mr-2"></i> Writing
+                </button>
+                <button class="category-btn px-6 py-2 rounded-full bg-gray-100 text-gray-800 font-medium whitespace-nowrap hover:bg-gray-200 transition-all" onclick="filterTools('coding')">
+                    <i class="fas fa-code mr-2"></i> Coding
+                </button>
+                <button class="category-btn px-6 py-2 rounded-full bg-gray-100 text-gray-800 font-medium whitespace-nowrap hover:bg-gray-200 transition-all" onclick="filterTools('video')">
+                    <i class="fas fa-video mr-2"></i> Video
+                </button>
+            </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                <h3 class="text-gray-500 text-sm font-medium">Total Tools</h3>
+                <p class="text-3xl font-bold text-indigo-600">120+</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                <h3 class="text-gray-500 text-sm font-medium">New This Month</h3>
+                <p class="text-3xl font-bold text-purple-600">15</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                <h3 class="text-gray-500 text-sm font-medium">Free Options</h3>
+                <p class="text-3xl font-bold text-green-600">42</p>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                <h3 class="text-gray-500 text-sm font-medium">Updated Weekly</h3>
+                <p class="text-3xl font-bold text-blue-600">Always</p>
+            </div>
+        </div>
+
+        <!-- Featured Tools -->
+        <h2 class="text-2xl font-bold mb-6 flex items-center">
+            <i class="fas fa-star mr-3 text-yellow-400"></i> Featured AI Tools
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+            <!-- Tool Cards will be generated here by JavaScript -->
+        </div>
+
+        <!-- Newsletter -->
+        <div class="mt-20 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-8 md:p-12 text-center">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4">Stay Updated with AI Trends</h2>
+            <p class="text-gray-600 mb-6 max-w-2xl mx-auto">Subscribe to our weekly newsletter to get the latest AI tool updates, tips, and industry news.</p>
+            <div class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+                <input type="email" placeholder="Your email address" class="flex-grow px-4 py-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                <button class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-lg font-medium transition-colors">
+                    Subscribe
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12 px-4">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-white text-lg font-bold mb-4">AI Tools Hub</h3>
+                    <p>Your one-stop destination for discovering the most powerful AI tools across different categories.</p>
+                    <div class="mt-4 flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin fa-lg"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-github fa-lg"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Categories</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white">Productivity</a></li>
+                        <li><a href="#" class="hover:text-white">Design</a></li>
+                        <li><a href="#" class="hover:text-white">Writing</a></li>
+                        <li><a href="#" class="hover:text-white">Coding</a></li>
+                        <li><a href="#" class="hover:text-white">Video</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Resources</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white">Blog</a></li>
+                        <li><a href="#" class="hover:text-white">Tutorials</a></li>
+                        <li><a href="#" class="hover:text-white">AI News</a></li>
+                        <li><a href="#" class="hover:text-white">Reviews</a></li>
+                        <li><a href="#" class="hover:text-white">Comparisons</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-white">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-white">Cookie Policy</a></li>
+                        <li><a href="#" class="hover:text-white">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+                <p>&copy; 2023 AI Tools Hub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Sample AI tools data
+        const aiTools = [
+            {
+                name: "ChatGPT",
+                description: "Advanced conversational AI that can assist with writing, coding, brainstorming and more.",
+                category: "productivity",
+                icon: "fa-comment-dots",
+                color: "bg-green-100 text-green-800",
+                url: "https://chat.openai.com",
+                free: true
+            },
+            {
+                name: "MidJourney",
+                description: "AI-powered art generator that creates stunning images from text descriptions.",
+                category: "design",
+                icon: "fa-palette",
+                color: "bg-purple-100 text-purple-800",
+                url: "https://www.midjourney.com",
+                free: false
+            },
+            {
+                name: "GitHub Copilot",
+                description: "AI pair programmer that suggests code and entire functions in real-time.",
+                category: "coding",
+                icon: "fa-code",
+                color: "bg-indigo-100 text-indigo-800",
+                url: "https://github.com/features/copilot",
+                free: false
+            },
+            {
+                name: "Grammarly",
+                description: "AI-powered writing assistant that checks grammar, spelling, and style.",
+                category: "writing",
+                icon: "fa-spell-check",
+                color: "bg-blue-100 text-blue-800",
+                url: "https://www.grammarly.com",
+                free: true
+            },
+            {
+                name: "Runway ML",
+                description: "Creative toolkit with AI magic tools for video editing, image generation and more.",
+                category: "video",
+                icon: "fa-film",
+                color: "bg-red-100 text-red-800",
+                url: "https://runwayml.com",
+                free: true
+            },
+            {
+                name: "Notion AI",
+                description: "AI-powered workspace for notes, docs, projects and knowledge management.",
+                category: "productivity",
+                icon: "fa-sticky-note",
+                color: "bg-gray-100 text-gray-800",
+                url: "https://www.notion.so/product/ai",
+                free: false
+            },
+            {
+                name: "DALL·E 2",
+                description: "AI system that can create realistic images and art from a description in natural language.",
+                category: "design",
+                icon: "fa-image",
+                color: "bg-yellow-100 text-yellow-800",
+                url: "https://openai.com/dall-e-2/",
+                free: false
+            },
+            {
+                name: "Descript",
+                description: "AI-powered video and podcast editing that works like editing a document.",
+                category: "video",
+                icon: "fa-microphone",
+                color: "bg-pink-100 text-pink-800",
+                url: "https://www.descript.com",
+                free: true
+            }
+        ];
+
+        // Function to render tools
+        function renderTools(tools) {
+            const container = document.querySelector('.grid-cols-1.md\\:grid-cols-2.lg\\:grid-cols-3.xl\\:grid-cols-4');
+            container.innerHTML = '';
+            
+            tools.forEach(tool => {
+                const toolCard = document.createElement('div');
+                toolCard.className = 'tool-card bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden transition-all duration-300';
+                
+                toolCard.innerHTML = `
+                    <div class="p-6">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="w-12 h-12 rounded-lg ${tool.color} flex items-center justify-center">
+                                <i class="${tool.icon} fa-xl"></i>
+                            </div>
+                            <span class="text-xs font-semibold px-2 py-1 rounded-full ${tool.free ? 'bg-green-100 text-green-800' : 'bg-gray-100 text-gray-800'}">
+                                ${tool.free ? 'Free' : 'Premium'}
+                            </span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">${tool.name}</h3>
+                        <p class="text-gray-600 mb-4">${tool.description}</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xs font-medium text-gray-400">${tool.category.charAt(0).toUpperCase() + tool.category.slice(1)}</span>
+                            <a href="${tool.url}" target="_blank" class="text-indigo-600 hover:text-indigo-800 font-medium flex items-center">
+                                Visit <i class="fas fa-arrow-right ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                `;
+                
+                container.appendChild(toolCard);
+            });
+        }
+
+        // Filter tools by category
+        function filterTools(category) {
+            // Update active button
+            document.querySelectorAll('.category-btn').forEach(btn => {
+                btn.classList.remove('active', 'bg-indigo-100', 'text-indigo-800');
+                btn.classList.add('bg-gray-100', 'text-gray-800', 'hover:bg-gray-200');
+            });
+            
+            if (category === 'all') {
+                renderTools(aiTools);
+                document.querySelector('.category-btn').classList.add('active', 'bg-indigo-100', 'text-indigo-800');
+                document.querySelector('.category-btn').classList.remove('bg-gray-100', 'text-gray-800', 'hover:bg-gray-200');
+            } else {
+                const filteredTools = aiTools.filter(tool => tool.category === category);
+                renderTools(filteredTools);
+                event.target.classList.add('active', 'bg-indigo-100', 'text-indigo-800');
+                event.target.classList.remove('bg-gray-100', 'text-gray-800', 'hover:bg-gray-200');
+            }
+        }
+
+        // Initial render
+        document.addEventListener('DOMContentLoaded', () => {
+            renderTools(aiTools);
+        });
+    </script>
+</body>
+</html>
