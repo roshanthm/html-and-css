@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kerala Public Transport - Real-Time Tracking</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .hero-gradient {
+            background: linear-gradient(135deg, #006747 0%, #00a651 100%);
+        }
+        .map-container {
+            height: 400px;
+            background-image: url('https://maps.googleapis.com/maps/api/staticmap?center=Kerala&zoom=7&size=800x400&maptype=roadmap&markers=color:red%7C8.5241,76.9366&key=YOUR_API_KEY');
+            background-size: cover;
+            background-position: center;
+            border-radius: 1rem;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .language-selector {
+            transition: all 0.3s ease;
+        }
+        .language-selector:hover {
+            transform: scale(1.05);
+        }
+        .bus-animation {
+            animation: moveBus 8s linear infinite;
+        }
+        @keyframes moveBus {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <img class="h-8 w-auto" src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Kerala_State_Road_Transport_Corporation_logo.png/220px-Kerala_State_Road_Transport_Corporation_logo.png" alt="KSRTC Logo">
+                        <span class="ml-2 text-xl font-bold text-green-800">Kerala Transport</span>
+                    </div>
+                </div>
+                <div class="hidden md:ml-6 md:flex md:items-center md:space-x-8">
+                    <a href="#" class="text-green-700 hover:text-green-900 px-3 py-2 text-sm font-medium">Home</a>
+                    <a href="#" class="text-gray-700 hover:text-green-900 px-3 py-2 text-sm font-medium">Routes</a>
+                    <a href="#" class="text-gray-700 hover:text-green-900 px-3 py-2 text-sm font-medium">Fares</a>
+                    <a href="#" class="text-gray-700 hover:text-green-900 px-3 py-2 text-sm font-medium">Digital Screens</a>
+                    <a href="#" class="text-gray-700 hover:text-green-900 px-3 py-2 text-sm font-medium">About</a>
+                    <button class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md text-sm font-medium">Download App</button>
+                </div>
+                <div class="-mr-2 flex items-center md:hidden">
+                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-green-900 focus:outline-none">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero-gradient text-white">
+        <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
+                    Transforming Public Transport Across Kerala
+                </h1>
+                <p class="mt-6 max-w-lg mx-auto text-xl">
+                    Real-time tracking, digital displays, and seamless connectivity for every passenger - with or without smartphones.
+                </p>
+                <div class="mt-10 flex justify-center space-x-4">
+                    <a href="#" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-green-700 bg-white hover:bg-gray-50">
+                        <i class="fab fa-google-play mr-2"></i> Google Play
+                    </a>
+                    <a href="#" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-black hover:bg-gray-800">
+                        <i class="fab fa-apple mr-2"></i> App Store
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Statewide Coverage Section -->
+    <div class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center">
+                <h2 class="text-base text-green-600 font-semibold tracking-wide uppercase">Statewide Coverage</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                    Serving Every Corner of Kerala
+                </p>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto">
+                    From bustling cities to remote villages, our system ensures no passenger is left behind.
+                </p>
+            </div>
+
+            <div class="mt-16">
+                <div class="map-container relative overflow-hidden">
+                    <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
+                        <div class="text-center text-white p-6 bg-black bg-opacity-60 rounded-lg">
+                            <h3 class="text-2xl font-bold">Real-Time Bus Tracking</h3>
+                            <p class="mt-2">See buses moving across Kerala in real-time</p>
+                        </div>
+                    </div>
+                    <div class="bus-animation absolute top-1/2 left-0">
+                        <i class="fas fa-bus text-3xl text-red-500"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center">
+                <h2 class="text-base text-green-600 font-semibold tracking-wide uppercase">Features</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                    Smart Solutions for Every Passenger
+                </p>
+            </div>
+
+            <div class="mt-10 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
+                <!-- Feature 1 -->
+                <div class="feature-card bg-white overflow-hidden shadow rounded-lg transition duration-300 ease-in-out">
+                    <div class="px-4 py-5 sm:p-6">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0 bg-green-100 rounded-md p-3">
+                                <i class="fas fa-mobile-alt text-green-600 text-2xl"></i>
+                            </div>
+                            <div class="ml-5 w-0 flex-1">
+                                <h3 class="text-lg font-medium text-gray-900">Mobile App</h3>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <p class="text-sm text-gray-600">
+                                Comprehensive app with real-time tracking, schedules, and booking. Works offline and supports multiple languages.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="feature-card bg-white overflow-hidden shadow rounded-lg transition duration-300 ease-in-out">
+                    <div class="px-4 py-5 sm:p-6">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0 bg-green-100 rounded-md p-3">
+                                <i class="fas fa-desktop text-green-600 text-2xl"></i>
+                            </div>
+                            <div class="ml-5 w-0 flex-1">
+                                <h3 class="text-lg font-medium text-gray-900">Digital Screens</h3>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <p class="text-sm text-gray-600">
+                                Real-time information displays at bus stands across Kerala, including rural areas.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="feature-card bg-white overflow-hidden shadow rounded-lg transition duration-300 ease-in-out">
+                    <div class="px-4 py-5 sm:p-6">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0 bg-green-100 rounded-md p-3">
+                                <i class="fas fa-language text-green-600 text-2xl"></i>
+                            </div>
+                            <div class="ml-5 w-0 flex-1">
+                                <h3 class="text-lg font-medium text-gray-900">Multilingual</h3>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <p class="text-sm text-gray-600">
+                                Support for Malayalam, English, Hindi, and Tamil to serve all passengers.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="feature-card bg-white overflow-hidden shadow rounded-lg transition duration-300 ease-in-out">
+                    <div class="px-4 py-5 sm:p-6">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0 bg-green-100 rounded-md p-3">
+                                <i class="fas fa-cloud text-green-600 text-2xl"></i>
+                            </div>
+                            <div class="ml-5 w-0 flex-1">
+                                <h3 class="text-lg font-medium text-gray-900">Cloud Powered</h3>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <p class="text-sm text-gray-600">
+                                AWS infrastructure ensures reliability and scalability across the entire state.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="feature-card bg-white overflow-hidden shadow rounded-lg transition duration-300 ease-in-out">
+                    <div class="px-4 py-5 sm:p-6">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0 bg-green-100 rounded-md p-3">
+                                <i class="fas fa-database text-green-600 text-2xl"></i>
+                            </div>
+                            <div class="ml-5 w-0 flex-1">
+                                <h3 class="text-lg font-medium text-gray-900">PostgreSQL</h3>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <p class="text-sm text-gray-600">
+                                Robust database management for schedules, bookings, and real-time data.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="feature-card bg-white overflow-hidden shadow rounded-lg transition duration-300 ease-in-out">
+                    <div class="px-4 py-5 sm:p-6">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0 bg-green-100 rounded-md p-3">
+                                <i class="fas fa-map-marked-alt text-green-600 text-2xl"></i>
+                            </div>
+                            <div class="ml-5 w-0 flex-1">
+                                <h3 class="text-lg font-medium text-gray-900">GPS Tracking</h3>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <p class="text-sm text-gray-600">
+                                Accurate real-time location tracking of all buses across Kerala.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Technology Stack -->
+    <div class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center">
+                <h2 class="text-base text-green-600 font-semibold tracking-wide uppercase">Technology Stack</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                    Built with Modern Technologies
+                </p>
+            </div>
+
+            <div class="mt-10 grid grid-cols-2 gap-8 md:grid-cols-4">
+                <div class="col-span-1 flex justify-center">
+                    <div class="flex items-center">
+                        <i class="fab fa-react text-5xl text-blue-500"></i>
+                        <span class="ml-3 text-xl font-medium">React Native</span>
+                    </div>
+                </div>
+                <div class="col-span-1 flex justify-center">
+                    <div class="flex items-center">
+                        <i class="fab fa-node-js text-5xl text-green-600"></i>
+                        <span class="ml-3 text-xl font-medium">Node.js</span>
+                    </div>
+                </div>
+                <div class="col-span-1 flex justify-center">
+                    <div class="flex items-center">
+                        <i class="fas fa-database text-5xl text-blue-700"></i>
+                        <span class="ml-3 text-xl font-medium">PostgreSQL</span>
+                    </div>
+                </div>
+                <div class="col-span-1 flex justify-center">
+                    <div class="flex items-center">
+                        <i class="fab fa-aws text-5xl text-orange-500"></i>
+                        <span class="ml-3 text-xl font-medium">AWS</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Testimonials -->
+    <div class="py-16 bg-green-700 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center">
+                <h2 class="text-base text-green-300 font-semibold tracking-wide uppercase">Testimonials</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight sm:text-4xl">
+                    What Passengers Are Saying
+                </p>
+            </div>
+
+            <div class="mt-10 grid grid-cols-1 gap-8 md:grid-cols-3">
+                <div class="bg-green-800 p-6 rounded-lg">
+                    <div class="flex items-center">
+                        <img class="h-12 w-12 rounded-full" src="https://randomuser.me/api/portraits/women/32.jpg" alt="User">
+                        <div class="ml-4">
+                            <h3 class="text-lg font-medium">Anitha S.</h3>
+                            <p class="text-green-200">Daily Commuter</p>
+                        </div>
+                    </div>
+                    <p class="mt-4 text-green-100">
+                        "The real-time tracking has changed my daily commute. I no longer waste time waiting at stops."
+                    </p>
+                </div>
+                <div class="bg-green-800 p-6 rounded-lg">
+                    <div class="flex items-center">
+                        <img class="h-12 w-12 rounded-full" src="https://randomuser.me/api/portraits/men/45.jpg" alt="User">
+                        <div class="ml-4">
+                            <h3 class="text-lg font-medium">Rajesh K.</h3>
+                            <p class="text-green-200">Tourist</p>
+                        </div>
+                    </div>
+                    <p class="mt-4 text-green-100">
+                        "As a visitor, the English support and clear schedules made getting around Kerala so easy."
+                    </p>
+                </div>
+                <div class="bg-green-800 p-6 rounded-lg">
+                    <div class="flex items-center">
+                        <img class="h-12 w-12 rounded-full" src="https://randomuser.me/api/portraits/women/68.jpg" alt="User">
+                        <div class="ml-4">
+                            <h3 class="text-lg font-medium">Lakshmi P.</h3>
+                            <p class="text-green-200">Senior Citizen</p>
+                        </div>
+                    </div>
+                    <p class="mt-4 text-green-100">
+                        "The digital screens at our village bus stand help me and others who don't use smartphones."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Language Support -->
+    <div class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h2 class="text-base text-green-600 font-semibold tracking-wide uppercase">Language Support</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                    Serving Kerala's Diverse Population
+                </p>
+                <p class="mt-4 max-w-2xl text-xl text-gray-500 mx-auto">
+                    Our system supports multiple languages to ensure accessibility for all.
+                </p>
+            </div>
+
+            <div class="mt-10 flex flex-wrap justify-center gap-4">
+                <div class="language-selector bg-gray-100 hover:bg-green-100 px-6 py-3 rounded-full cursor-pointer">
+                    <span class="text-lg">മലയാളം</span>
+                </div>
+                <div class="language-selector bg-gray-100 hover:bg-green-100 px-6 py-3 rounded-full cursor-pointer">
+                    <span class="text-lg">English</span>
+                </div>
+                <div class="language-selector bg-gray-100 hover:bg-green-100 px-6 py-3 rounded-full cursor-pointer">
+                    <span class="text-lg">हिन्दी</span>
+                </div>
+                <div class="language-selector bg-gray-100 hover:bg-green-100 px-6 py-3 rounded-full cursor-pointer">
+                    <span class="text-lg">தமிழ்</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="bg-green-600">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between">
+            <h2 class="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+                <span class="block">Ready to experience better public transport?</span>
+                <span class="block text-green-200">Download the app today.</span>
+            </h2>
+            <div class="mt-8 flex lg:mt-0 lg:flex-shrink-0">
+                <div class="inline-flex rounded-md shadow">
+                    <a href="#" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-green-600 bg-white hover:bg-green-50">
+                        <i class="fab fa-google-play mr-2"></i> Google Play
+                    </a>
+                </div>
+                <div class="ml-3 inline-flex rounded-md shadow">
+                    <a href="#" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-black hover:bg-gray-800">
+                        <i class="fab fa-apple mr-2"></i> App Store
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Services</h3>
+                    <ul class="mt-4 space-y-4">
+                        <li><a href="#" class="text-base text-gray-300 hover:text-white">Bus Tracking</a></li>
+                        <li><a href="#" class="text-base text-gray-300 hover:text-white">Route Planning</a></li>
+                        <li><a href="#" class="text-base text-gray-300 hover:text-white">Digital Displays</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">About</h3>
+                    <ul class="mt-4 space-y-4">
+                        <li><a href="#" class="text-base text-gray-300 hover:text-white">Our Mission</a></li>
+                        <li><a href="#" class="text-base text-gray-300 hover:text-white">Technology</a></li>
+                        <li><a href="#" class="text-base text-gray-300 hover:text-white">Team</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Support</h3>
+                    <ul class="mt-4 space-y-4">
+                        <li><a href="#" class="text-base text-gray-300 hover:text-white">Help Center</a></li>
+                        <li><a href="#" class="text-base text-gray-300 hover:text-white">Contact Us</a></li>
+                        <li><a href="#" class="text-base text-gray-300 hover:text-white">Feedback</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase">Connect</h3>
+                    <div class="mt-4 flex space-x-6">
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                    <div class="mt-6">
+                        <p class="text-gray-400 text-sm">
+                            &copy; 2023 Kerala Public Transport System. All rights reserved.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple JavaScript for mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.querySelector('[aria-controls="mobile-menu"]');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            mobileMenuButton.addEventListener('click', function() {
+                const expanded = this.getAttribute('aria-expanded') === 'true';
+                this.setAttribute('aria-expanded', !expanded);
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            // Animation for features on scroll
+            const observerOptions = {
+                threshold: 0.1
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-fadeIn');
+                    }
+                });
+            }, observerOptions);
+            
+            document.querySelectorAll('.feature-card').forEach(card => {
+                observer.observe(card);
+            });
+        });
+    </script>
+</body>
+</html>
