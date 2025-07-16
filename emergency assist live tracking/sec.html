@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency Assist - Your Safety, Our Priority</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚨</text></svg>">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loading-content">
+            <div class="loading-icon">🚨</div>
+            <h2>Emergency Assist</h2>
+            <p>Loading your safety dashboard...</p>
+            <div class="loading-spinner"></div>
+        </div>
+    </div>
+
+    <!-- Auth Page -->
+    <div id="auth-page" class="auth-page hidden">
+        <div class="auth-container">
+            <div class="auth-header">
+                <div class="app-logo">
+                    <div class="logo-icon">🚨</div>
+                    <div>
+                        <h1>Emergency Assist</h1>
+                        <p>Your safety, our priority</p>
+                    </div>
+                </div>
+                
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🆘</div>
+                        <p>One-tap SOS</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📍</div>
+                        <p>Live Location</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📞</div>
+                        <p>Auto Alerts</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Login Form -->
+            <div id="login-form" class="auth-form">
+                <div class="form-header">
+                    <div class="form-icon">🔐</div>
+                    <h2>Welcome Back</h2>
+                    <p>Sign in to your Emergency Assist account</p>
+                </div>
+
+                <div id="auth-error" class="error-message hidden"></div>
+
+                <form id="login-form-element">
+                    <div class="input-group">
+                        <label for="login-email">Email Address</label>
+                        <div class="input-wrapper">
+                            <span class="input-icon">📧</span>
+                            <input type="email" id="login-email" placeholder="Enter your email" required>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="login-password">Password</label>
+                        <div class="input-wrapper">
+                            <span class="input-icon">🔒</span>
+                            <input type="password" id="login-password" placeholder="Enter your password" required>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" id="login-btn">
+                        <span class="btn-text">Sign In</span>
+                        <div class="btn-spinner hidden"></div>
+                    </button>
+                </form>
+
+                <div class="form-footer">
+                    <p>Don't have an account? <button id="show-register" class="link-btn">Sign up</button></p>
+                </div>
+            </div>
+
+            <!-- Register Form -->
+            <div id="register-form" class="auth-form hidden">
+                <div class="form-header">
+                    <div class="form-icon">👤</div>
+                    <h2>Create Account</h2>
+                    <p>Join Emergency Assist to stay safe</p>
+                </div>
+
+                <div id="register-error" class="error-message hidden"></div>
+
+                <form id="register-form-element">
+                    <div class="input-group">
+                        <label for="register-name">Full Name</label>
+                        <div class="input-wrapper">
+                            <span class="input-icon">👤</span>
+                            <input type="text" id="register-name" placeholder="Enter your full name" required>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="register-email">Email Address</label>
+                        <div class="input-wrapper">
+                            <span class="input-icon">📧</span>
+                            <input type="email" id="register-email" placeholder="Enter your email" required>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="register-password">Password</label>
+                        <div class="input-wrapper">
+                            <span class="input-icon">🔒</span>
+                            <input type="password" id="register-password" placeholder="Create a password" required>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="register-confirm">Confirm Password</label>
+                        <div class="input-wrapper">
+                            <span class="input-icon">🔒</span>
+                            <input type="password" id="register-confirm" placeholder="Confirm your password" required>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" id="register-btn">
+                        <span class="btn-text">Create Account</span>
+                        <div class="btn-spinner hidden"></div>
+                    </button>
+                </form>
+
+                <div class="form-footer">
+                    <p>Already have an account? <button id="show-login" class="link-btn">Sign in</button></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Dashboard -->
+    <div id="dashboard" class="dashboard hidden">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="header-left">
+                    <button id="menu-toggle" class="menu-btn">☰</button>
+                    <div class="app-title">
+                        <div class="title-icon">🚨</div>
+                        <div>
+                            <h1>Emergency Assist</h1>
+                            <p>Stay Safe, Stay Connected</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <button class="notification-btn">
+                        🔔
+                        <span class="notification-badge"></span>
+                    </button>
+                    <div class="user-info">
+                        <div class="user-details">
+                            <p id="user-name">User</p>
+                            <span class="user-status">Online</span>
+                        </div>
+                        <div class="user-avatar">👤</div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Sidebar -->
+        <aside id="sidebar" class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-logo">
+                    <div class="logo-icon">🛡️</div>
+                    <div>
+                        <h2>Emergency</h2>
+                        <p>Control Center</p>
+                    </div>
+                </div>
+                <button id="sidebar-close" class="close-btn">✕</button>
+            </div>
+
+            <nav class="sidebar-nav">
+                <button class="nav-item active" data-tab="dashboard">
+                    <span class="nav-icon">🏠</span>
+                    <span>Dashboard</span>
+                </button>
+                <button class="nav-item" data-tab="sos">
+                    <span class="nav-icon">🚨</span>
+                    <span>Emergency SOS</span>
+                </button>
+                <button class="nav-item" data-tab="contacts">
+                    <span class="nav-icon">📞</span>
+                    <span>Emergency Contacts</span>
+                </button>
+                <button class="nav-item" data-tab="profile">
+                    <span class="nav-icon">👤</span>
+                    <span>Profile</span>
+                </button>
+            </nav>
+
+            <div class="sidebar-status">
+                <div class="status-card">
+                    <div class="status-indicator">
+                        <div class="status-dot"></div>
+                        <span>System Online</span>
+                    </div>
+                    <p>All services operational</p>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Dashboard Tab -->
+            <div id="dashboard-tab" class="tab-content active">
+                <div class="status-grid">
+                    <div class="status-card location-status">
+                        <div class="card-header">
+                            <span class="card-icon">📍</span>
+                            <div>
+                                <h3>Location Status</h3>
+                                <p id="location-value">Searching...</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="status-card motion-status">
+                        <div class="card-header">
+                            <span class="card-icon">🏃</span>
+                            <div>
+                                <h3>Motion Detection</h3>
+                                <p id="motion-value">Stationary</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="status-card emergency-status">
+                        <div class="card-header">
+                            <span class="card-icon">🛡️</span>
+                            <div>
+                                <h3>Emergency Status</h3>
+                                <p>Safe</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="status-card health-status">
+                        <div class="card-header">
+                            <span class="card-icon">❤️</span>
+                            <div>
+                                <h3>Health Monitor</h3>
+                                <p>Normal</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chart-section">
+                    <div class="section-header">
+                        <h3>Activity Tracking</h3>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="activity-chart" width="800" height="300"></canvas>
+                    </div>
+                </div>
+
+                <div class="services-section">
+                    <div class="section-header">
+                        <h3>Nearby Emergency Services</h3>
+                    </div>
+                    <div id="nearby-services" class="services-grid">
+                        <!-- Services will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- SOS Tab -->
+            <div id="sos-tab" class="tab-content">
+                <div class="sos-container">
+                    <div class="sos-header">
+                        <h2>Emergency SOS</h2>
+                        <p>Press and hold the button below to activate emergency services</p>
+                    </div>
+
+                    <div id="emergency-types" class="emergency-types">
+                        <button class="emergency-type" data-type="SOS">General Emergency</button>
+                        <button class="emergency-type" data-type="ACCIDENT">Accident</button>
+                        <button class="emergency-type" data-type="BREAKDOWN">Vehicle Breakdown</button>
+                        <button class="emergency-type" data-type="MEDICAL">Medical Emergency</button>
+                        <button class="emergency-type" data-type="LOST">Lost/Stranded</button>
+                    </div>
+
+                    <div class="sos-button-container">
+                        <button id="sos-button" class="sos-button">
+                            <div class="sos-content">
+                                <div class="sos-icon">🚨</div>
+                                <div class="sos-text">SOS</div>
+                            </div>
+                            <div id="countdown" class="countdown hidden"></div>
+                            <div class="sos-ripple"></div>
+                        </button>
+                    </div>
+
+                    <div id="emergency-status" class="emergency-status-panel hidden">
+                        <div class="status-header">
+                            <h3>Emergency Active</h3>
+                            <div class="live-indicator">
+                                <div class="live-dot"></div>
+                                <span>LIVE</span>
+                            </div>
+                        </div>
+                        <div class="status-details">
+                            <div class="status-item">
+                                <span class="status-icon">🕐</span>
+                                <span id="activation-time">Activated: --:--:--</span>
+                            </div>
+                            <div class="status-item">
+                                <span class="status-icon">📍</span>
+                                <span id="location-status">Location: Sharing live location</span>
+                            </div>
+                            <div class="status-item">
+                                <span class="status-icon">📞</span>
+                                <span>Emergency contacts notified</span>
+                            </div>
+                        </div>
+                        <button id="cancel-emergency" class="btn btn-secondary">Cancel Emergency</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contacts Tab -->
+            <div id="contacts-tab" class="tab-content">
+                <div class="contacts-header">
+                    <h2>Emergency Contacts</h2>
+                    <button id="add-contact-btn" class="btn btn-primary">
+                        <span>➕ Add Contact</span>
+                    </button>
+                </div>
+
+                <div id="add-contact-form" class="contact-form hidden">
+                    <h3>Add New Contact</h3>
+                    <div class="form-grid">
+                        <div class="input-group">
+                            <label for="contact-name">Name</label>
+                            <input type="text" id="contact-name" placeholder="Enter contact name">
+                        </div>
+                        <div class="input-group">
+                            <label for="contact-phone">Phone</label>
+                            <input type="tel" id="contact-phone" placeholder="Enter phone number">
+                        </div>
+                        <div class="input-group">
+                            <label for="contact-relationship">Relationship</label>
+                            <select id="contact-relationship">
+                                <option value="">Select relationship</option>
+                                <option value="Spouse">Spouse</option>
+                                <option value="Parent">Parent</option>
+                                <option value="Sibling">Sibling</option>
+                                <option value="Child">Child</option>
+                                <option value="Friend">Friend</option>
+                                <option value="Doctor">Doctor</option>
+                                <option value="Colleague">Colleague</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label for="contact-priority">Priority</label>
+                            <input type="number" id="contact-priority" min="1" max="10" value="1">
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <button id="cancel-contact" class="btn btn-secondary">Cancel</button>
+                        <button id="save-contact" class="btn btn-primary">Add Contact</button>
+                    </div>
+                </div>
+
+                <div id="contacts-grid" class="contacts-grid">
+                    <!-- Contacts will be populated by JavaScript -->
+                </div>
+
+                <div id="no-contacts" class="empty-state">
+                    <div class="empty-icon">📞</div>
+                    <h3>No emergency contacts yet</h3>
+                    <p>Add your first emergency contact to get started</p>
+                </div>
+            </div>
+
+            <!-- Profile Tab -->
+            <div id="profile-tab" class="tab-content">
+                <div class="profile-header">
+                    <h2>Profile Settings</h2>
+                    <button id="edit-profile-btn" class="btn btn-primary">
+                        <span>✏️ Edit Profile</span>
+                    </button>
+                </div>
+
+                <div class="profile-card">
+                    <div class="profile-info">
+                        <div class="profile-avatar">👤</div>
+                        <div>
+                            <h3 id="profile-name">User Name</h3>
+                            <p id="profile-email">user@example.com</p>
+                        </div>
+                    </div>
+
+                    <div class="profile-sections">
+                        <div class="profile-section">
+                            <h4>Personal Information</h4>
+                            <div class="info-grid">
+                                <div class="info-item">
+                                    <label>Full Name</label>
+                                    <div class="info-value">
+                                        <span class="info-icon">👤</span>
+                                        <span id="display-name">User Name</span>
+                                        <input type="text" id="edit-name" class="edit-input hidden" value="User Name">
+                                    </div>
+                                </div>
+                                <div class="info-item">
+                                    <label>Email</label>
+                                    <div class="info-value">
+                                        <span class="info-icon">📧</span>
+                                        <span id="display-email">user@example.com</span>
+                                        <input type="email" id="edit-email" class="edit-input hidden" value="user@example.com">
+                                    </div>
+                                </div>
+                                <div class="info-item">
+                                    <label>Phone Number</label>
+                                    <div class="info-value">
+                                        <span class="info-icon">📞</span>
+                                        <span id="display-phone">Not provided</span>
+                                        <input type="tel" id="edit-phone" class="edit-input hidden" placeholder="Enter phone number">
+                                    </div>
+                                </div>
+                                <div class="info-item">
+                                    <label>Address</label>
+                                    <div class="info-value">
+                                        <span class="info-icon">📍</span>
+                                        <span id="display-address">123 Main St, City, State 12345</span>
+                                        <textarea id="edit-address" class="edit-input hidden" rows="3">123 Main St, City, State 12345</textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="profile-section">
+                            <h4>Medical Information</h4>
+                            <div class="info-grid">
+                                <div class="info-item">
+                                    <label>Blood Type</label>
+                                    <div class="info-value">
+                                        <span class="info-icon">❤️</span>
+                                        <span id="display-blood">O+</span>
+                                        <select id="edit-blood" class="edit-input hidden">
+                                            <option value="A+">A+</option>
+                                            <option value="A-">A-</option>
+                                            <option value="B+">B+</option>
+                                            <option value="B-">B-</option>
+                                            <option value="AB+">AB+</option>
+                                            <option value="AB-">AB-</option>
+                                            <option value="O+" selected>O+</option>
+                                            <option value="O-">O-</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="info-item">
+                                    <label>Allergies</label>
+                                    <div class="info-value">
+                                        <span id="display-allergies">Penicillin</span>
+                                        <input type="text" id="edit-allergies" class="edit-input hidden" value="Penicillin" placeholder="List any allergies">
+                                    </div>
+                                </div>
+                                <div class="info-item">
+                                    <label>Current Medications</label>
+                                    <div class="info-value">
+                                        <span id="display-medications">Aspirin (daily)</span>
+                                        <input type="text" id="edit-medications" class="edit-input hidden" value="Aspirin (daily)" placeholder="List current medications">
+                                    </div>
+                                </div>
+                                <div class="info-item">
+                                    <label>Emergency Medical Notes</label>
+                                    <div class="info-value">
+                                        <span id="display-notes">Diabetic - carries insulin pen</span>
+                                        <textarea id="edit-notes" class="edit-input hidden" rows="3" placeholder="Important medical information for emergencies">Diabetic - carries insulin pen</textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="profile-actions" class="profile-actions">
+                        <div id="edit-actions" class="edit-actions hidden">
+                            <button id="cancel-edit" class="btn btn-secondary">✕ Cancel</button>
+                            <button id="save-profile" class="btn btn-success">💾 Save</button>
+                        </div>
+                        <button id="logout-btn" class="btn btn-danger">Sign Out</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
