@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+      /* Chatbot specific styles */
+      #chatbot-button {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 60px;
+        height: 60px;
+        background-color: #4f46e5;
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        transition: all 0.3s ease;
+        border: none;
+      }
+      
+      #chatbot-button:hover {
+        background-color: #4338ca;
+        transform: scale(1.05);
+      }
+      
+      #chatbot-container {
+        position: fixed;
+        bottom: 90px;
+        right: 20px;
+        width: 350px;
+        height: 500px;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+        display: none;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+      
+      #chatbot-container iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+      
+      @media (max-width: 576px) {
+        #chatbot-container {
+          width: 90%;
+          right: 5%;
+          height: 60vh;
+          bottom: 80px;
+        }
+      }
+    </style>
+</head>
+<body>
+    <!-- Your website content here -->
+    
+    <!-- Floating Chat Button -->
+    <button id="chatbot-button">
+      <i class="fas fa-robot fa-lg"></i>
+    </button>
+
+    <!-- Chatbot Container -->
+    <div id="chatbot-container">
+      <iframe
+        src="https://www.chatbase.co/chatbot-iframe/14FW9Ggysfxc3KdE9-BpE" 
+        width="100%" 
+        height="100%"
+        frameborder="0"
+      ></iframe>
+    </div>
+
+    <script>
+      // Chatbot toggle functionality
+      document.addEventListener('DOMContentLoaded', function() {
+        const chatbotButton = document.getElementById('chatbot-button');
+        const chatbotContainer = document.getElementById('chatbot-container');
+        
+        chatbotButton.addEventListener('click', function(e) {
+          e.stopPropagation();
+          chatbotContainer.style.display = chatbotContainer.style.display === 'block' ? 'none' : 'block';
+        });
+        
+        // Close when clicking outside
+        document.addEventListener('click', function(event) {
+          if (!chatbotContainer.contains(event.target) && !chatbotButton.contains(event.target)) {
+            chatbotContainer.style.display = 'none';
+          }
+        });
+      });
+    </script>
+</body>
+</html>
