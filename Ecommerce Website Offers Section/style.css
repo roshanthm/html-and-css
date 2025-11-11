@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+}
+
+/* ✅ Background Gradient */
+.offers-section {
+  background: linear-gradient(to right, #f49541, #dd5d97, #ad2167);
+  color: white;
+}
+
+/* ✅ Special Offer Image */
+.offer-special-img {
+  width: 200px;
+  max-width: 100%;
+}
+
+/* ✅ Appliances Image */
+.offer-appliances-img {
+  width: 100%;
+  max-width: 600px;
+  object-fit: contain;
+}
+
+/* ✅ Credit Card Image */
+.offer-card-img {
+  width: 130px;
+  height: auto;
+}
+
+/* ✅ Responsive Text Styling */
+@media (max-width: 767px) {
+  .offers-section h2 {
+    font-size: 1.5rem;
+  }
+  .offers-section p {
+    font-size: 1rem;
+  }
+}
