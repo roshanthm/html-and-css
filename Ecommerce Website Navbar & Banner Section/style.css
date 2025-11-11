@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* ✅ Navbar */
+.navbar-brand .logo {
+    width: 50px;
+}
+
+.nav-link {
+    font-weight: 500;
+    color: #212529 !important;
+}
+
+.nav-link:hover {
+    color: #0d6efd !important;
+}
+
+/* ✅ Carousel Images */
+.banner-img {
+    height: auto;
+    object-fit: cover;
+}
+
+/* ✅ Indicators */
+.carousel-indicators [data-bs-target] {
+    background-color: #000;
+}
+
+/* ✅ Controls */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(1);
+}
