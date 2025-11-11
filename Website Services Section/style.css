@@ -1,0 +1,50 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+}
+
+/* ✅ Background */
+.bg-services {
+  background-color: #52606d;
+}
+
+/* ✅ Section Titles */
+.section-subtitle {
+  color: #cced00;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.section-title {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 36px;
+}
+
+/* ✅ Service Cards */
+.service-card {
+  background-color: #323f4b;
+  color: #9aa5b1;
+  transition: transform 0.2s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+}
+
+/* ✅ Icon + Headings */
+.service-icon {
+  width: 60px;
+}
+
+.service-heading {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.service-text {
+  color: #9aa5b1;
+  font-size: 16px;
+  line-height: 1.6;
+}
