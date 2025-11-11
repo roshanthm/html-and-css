@@ -1,0 +1,31 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+}
+
+/* ✅ Background color */
+.bg-dark-section {
+  background-color: #222b36;
+  min-height: 100vh;
+  color: #ffffff;
+}
+
+/* ✅ Image styling */
+.vr-image {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ✅ Title */
+.title {
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 1.3;
+}
+
+/* ✅ Button styling */
+.contact-btn {
+  padding: 10px 25px;
+  font-weight: 500;
+  border-radius: 6px;
+}
