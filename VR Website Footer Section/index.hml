@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VR Website - Footer Section</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="bg-footer text-light">
+
+  <!-- ✅ Footer Section -->
+  <div class="container py-5">
+    <div class="row justify-content-center justify-content-md-start text-center text-md-left">
+
+      <!-- Logo and Social Icons -->
+      <div class="col-md-4 mb-4">
+        <img src="https://d2clawv67efefq.cloudfront.net/ccbp-responsive-website/vr-logo-img.png" alt="VR Logo" class="footer-logo mb-3">
+
+        <div class="d-flex justify-content-center justify-content-md-start mb-3">
+          <div class="icon-circle mx-2"><i class="fab fa-google"></i></div>
+          <div class="icon-circle mx-2"><i class="fab fa-twitter"></i></div>
+          <div class="icon-circle mx-2"><i class="fab fa-instagram"></i></div>
+          <div class="icon-circle mx-2"><i class="fab fa-linkedin"></i></div>
+        </div>
+
+        <p class="footer-address">
+          37, Ayur Vigyan Nagar, New Delhi, India.
+        </p>
+      </div>
+
+      <!-- Contact Us -->
+      <div class="col-md-4 mb-4">
+        <h6 class="footer-heading">Contact Us</h6>
+        <p class="footer-text"><i class="fas fa-envelope me-2"></i> vr@gmail.com</p>
+        <p class="footer-text"><i class="fas fa-phone me-2"></i> 1234506789</p>
+        <p class="footer-text"><i class="fab fa-skype me-2"></i> Rahul</p>
+      </div>
+
+      <!-- Let Us Help You -->
+      <div class="col-md-4 mb-4">
+        <h6 class="footer-heading">Let Us Help You</h6>
+        <p class="footer-text">100% Purchase Protection</p>
+        <p class="footer-text">Your Account</p>
+        <p class="footer-text">Return Centre</p>
+        <p class="footer-text">Help</p>
+      </div>
+    </div>
+
+    <hr class="footer-divider" />
+
+    <p class="text-center text-md-left mb-0 footer-copy">
+      © 2020 by Rahul. Created with Bootstrap.
+    </p>
+  </div>
+
+  <!-- Font Awesome for Icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>
