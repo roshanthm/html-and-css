@@ -1,0 +1,33 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+}
+
+/* ✅ Background */
+.bg-contact {
+  background-color: #001c32;
+}
+
+/* ✅ Highlight Color */
+.text-highlight {
+  color: #cced00;
+}
+
+/* ✅ Muted Text Color */
+.text-muted {
+  color: #9aa5b1 !important;
+}
+
+/* ✅ Profile Image */
+.contact-img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+/* ✅ Footer */
+.footer-text {
+  background-color: #0d2436;
+  color: #5a7184;
+  font-size: 15px;
+}
