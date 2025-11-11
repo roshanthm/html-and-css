@@ -1,0 +1,58 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+}
+
+/* ✅ Background */
+.bg-testimonials {
+  background-color: #1f2933;
+}
+
+/* ✅ Section Titles */
+.section-subtitle {
+  color: #cced00;
+  font-size: 18px;
+}
+
+.section-title {
+  color: #ffffff;
+  font-size: 36px;
+}
+
+/* ✅ Testimonial Card */
+.testimonial-card {
+  background-color: #323f4b;
+  color: #9aa5b1;
+}
+
+.testimonial-img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+}
+
+.testimonial-text {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  color: #9aa5b1;
+}
+
+/* ✅ Carousel Arrows */
+.carousel-control-prev,
+.carousel-control-next {
+  top: auto;
+  bottom: 10px;
+  width: auto;
+}
+
+.carousel-control-prev i,
+.carousel-control-next i {
+  color: #ffffff;
+  transition: color 0.3s ease;
+}
+
+.carousel-control-prev i:hover,
+.carousel-control-next i:hover {
+  color: #cced00;
+}
