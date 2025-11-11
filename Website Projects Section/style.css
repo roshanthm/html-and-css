@@ -1,0 +1,56 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+}
+
+/* ✅ Background */
+.bg-projects {
+  background-color: #3e4c59;
+}
+
+/* ✅ Section Titles */
+.section-label {
+  color: #cced00;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.section-heading {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+/* ✅ Project Card Styling */
+.project-card {
+  background-color: #323f4b;
+  border-radius: 12px;
+}
+
+.project-category {
+  color: #9aa5b1;
+  font-size: 15px;
+}
+
+.project-title {
+  color: #ffffff;
+  font-weight: 600;
+  margin-top: 5px;
+}
+
+.project-description {
+  color: #9aa5b1;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+/* ✅ Anchor + Bootstrap Arrow Icon */
+.read-more {
+  color: #cced00;
+  font-weight: 600;
+}
+
+.read-more i {
+  font-size: 1.2rem;
+  vertical-align: middle;
+}
