@@ -1,0 +1,60 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #ffffff;
+  color: #1f2933;
+  margin: 0;
+}
+
+/* Section heading */
+.section-title {
+  font-weight: 700;
+  color: #1f2933;
+}
+
+/* ✅ Product cards with background images */
+.product-card {
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 6px;
+  color: #ffffff;
+  display: flex;
+}
+
+.product-info {
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 0 0 6px 6px;
+}
+
+.product-name {
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.product-price {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+/* Buttons */
+.btn-outline-light {
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  font-weight: 500;
+  border-radius: 5px;
+  padding: 8px 20px;
+}
+
+.btn-view-all {
+  background-color: #1754a1;
+  color: #ffffff;
+  font-weight: 500;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 6px;
+}
+
+.btn-view-all:hover {
+  background-color: #0e3d7a;
+}
