@@ -1,0 +1,59 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+}
+
+/* ✅ Footer Background */
+.bg-footer {
+  background-color: #19232d;
+  color: #959ead;
+}
+
+/* ✅ Logo */
+.footer-logo {
+  width: 60px;
+}
+
+/* ✅ Social Icons */
+.icon-circle {
+  background-color: #202b36;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #5a7184;
+  font-size: 18px;
+}
+
+/* ✅ Text Styling */
+.footer-heading {
+  font-weight: 700;
+  color: #5a7184;
+  margin-bottom: 15px;
+}
+
+.footer-text {
+  color: #959ead;
+  margin-bottom: 8px;
+  font-size: 15px;
+}
+
+.footer-address {
+  color: #959ead;
+  margin-top: 10px;
+  font-size: 15px;
+}
+
+/* ✅ Divider & Copyright */
+.footer-divider {
+  border: 0.5px solid #5a7184;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.footer-copy {
+  color: #959ead;
+  font-size: 14px;
+}
