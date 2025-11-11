@@ -18,6 +18,7 @@
   <!-- ✅ Navbar -->
   <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
     <div class="container">
+      <!-- ✅ Logo -->
       <a class="navbar-brand d-flex align-items-center" href="#">
         <img src="https://d2clawv67efefq.cloudfront.net/ccbp-responsive-website/ecommerce-website-logo-img.png"
              alt="Ecommerce Logo"
@@ -25,11 +26,13 @@
         <span class="fw-bold text-primary">Fly</span><span class="fw-bold text-danger"> Buy</span>
       </a>
 
+      <!-- ✅ Navbar toggler -->
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse" id="navbarNav">
+      <!-- ✅ Navigation Links (with ml-auto) -->
+      <div class="collapse navbar-collapse ml-auto" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
@@ -47,34 +50,33 @@
 
       <!-- ✅ Slide 1 -->
       <div class="carousel-item active">
-        <picture>
-          <!-- Small Devices -->
-          <source media="(max-width: 767px)" srcset="https://d2clawv67efefq.cloudfront.net/ccbp-responsive-website/ecommerce-carousel-1-sm-img.png" />
-          <!-- Medium and Larger -->
-          <img src="https://d2clawv67efefq.cloudfront.net/ccbp-responsive-website/ecommerce-carousel-1-img.png"
-               class="d-block w-100 banner-img"
-               alt="Diwali Banner 1" />
-        </picture>
+        <!-- ✅ Responsive image using d-md- -->
+        <img src="https://d2clawv67efefq.cloudfront.net/ccbp-responsive-website/ecommerce-carousel-1-img.png"
+             class="d-md-block d-none w-100 banner-img"
+             alt="Diwali Banner Desktop" />
+        <img src="https://d2clawv67efefq.cloudfront.net/ccbp-responsive-website/ecommerce-carousel-1-sm-img.png"
+             class="d-block d-md-none w-100 banner-img"
+             alt="Diwali Banner Mobile" />
       </div>
 
       <!-- ✅ Slide 2 -->
       <div class="carousel-item">
-        <picture>
-          <source media="(max-width: 767px)" srcset="https://d2clawv67efefq.cloudfront.net/ccbp-responsive-website/ecommerce-carousel-2-sm-img.png" />
-          <img src="https://d2clawv67efefq.cloudfront.net/ccbp-responsive-website/ecommerce-carousel-2-img.png"
-               class="d-block w-100 banner-img"
-               alt="Diwali Banner 2" />
-        </picture>
+        <img src="https://d2clawv67efefq.cloudfront.net/ccbp-responsive-website/ecommerce-carousel-2-img.png"
+             class="d-md-block d-none w-100 banner-img"
+             alt="Diwali Banner Desktop" />
+        <img src="https://d2clawv67efefq.cloudfront.net/ccbp-responsive-website/ecommerce-carousel-2-sm-img.png"
+             class="d-block d-md-none w-100 banner-img"
+             alt="Diwali Banner Mobile" />
       </div>
 
       <!-- ✅ Slide 3 -->
       <div class="carousel-item">
-        <picture>
-          <source media="(max-width: 767px)" srcset="https://d2clawv67efefq.cloudfront.net/ccbp-responsive-website/ecommerce-carousel-3-sm-img.png" />
-          <img src="https://d2clawv67efefq.cloudfront.net/ccbp-responsive-website/ecommerce-carousel-3-img.png"
-               class="d-block w-100 banner-img"
-               alt="Diwali Banner 3" />
-        </picture>
+        <img src="https://d2clawv67efefq.cloudfront.net/ccbp-responsive-website/ecommerce-carousel-3-img.png"
+             class="d-md-block d-none w-100 banner-img"
+             alt="Diwali Banner Desktop" />
+        <img src="https://d2clawv67efefq.cloudfront.net/ccbp-responsive-website/ecommerce-carousel-3-sm-img.png"
+             class="d-block d-md-none w-100 banner-img"
+             alt="Diwali Banner Mobile" />
       </div>
     </div>
 
@@ -86,7 +88,7 @@
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
     </button>
 
-    <!-- ✅ Carousel Indicators -->
+    <!-- ✅ Indicators -->
     <div class="carousel-indicators">
       <button type="button" data-bs-target="#bannerCarousel" data-bs-slide-to="0" class="active"></button>
       <button type="button" data-bs-target="#bannerCarousel" data-bs-slide-to="1"></button>
@@ -94,7 +96,7 @@
     </div>
   </div>
 
-  <!-- Bootstrap JS -->
+  <!-- ✅ Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
