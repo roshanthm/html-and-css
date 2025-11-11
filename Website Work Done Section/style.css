@@ -1,0 +1,33 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+}
+
+/* ✅ Background Image Container */
+.work-done-container {
+  background-image: url('https://d2clawv67efefq.cloudfront.net/ccbp-responsive-website/portfolio-work-done-bg.png');
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+}
+
+/* ✅ HR line styling */
+.custom-line {
+  width: 40px;
+  height: 2px;
+  background-color: #ffffff;
+  opacity: 0.8;
+  border: none;
+  margin: 10px auto;
+}
+
+/* ✅ Text Styling */
+h3 {
+  font-size: 2rem;
+  margin-bottom: 5px;
+}
+
+p {
+  color: #f1f1f1;
+  font-size: 1rem;
+}
