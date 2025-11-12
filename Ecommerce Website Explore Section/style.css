@@ -1,0 +1,34 @@
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #f5f7fa;
+}
+
+/* ✅ Text Colors */
+.text-primary-title {
+  color: #183b56;
+}
+
+.text-secondary {
+  color: #1f2933 !important;
+}
+
+.text-warning {
+  color: #ff9f00 !important;
+}
+
+/* ✅ Card Styling */
+.shadow {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08) !important;
+}
+
+.deal-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* ✅ Hover Effect */
+a:hover {
+  color: #183b56 !important;
+}
