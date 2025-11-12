@@ -1,0 +1,27 @@
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #0c0521;
+}
+
+/* ✅ Hero Section with background-image and background-size cover */
+.hero-section {
+  background-image: url("https://assets.ccbp.in/frontend/responsive-website/landing-section-bg.png");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+/* ✅ Highlight text color */
+.text-highlight {
+  color: #ffdda9;
+}
+
+/* Navbar link styling */
+.nav-link {
+  color: #ffffff !important;
+  font-weight: 500;
+}
+
+.nav-link:hover {
+  color: #ffdda9 !important;
+}
