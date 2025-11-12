@@ -1,0 +1,32 @@
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #f8f9fa;
+}
+
+/* ✅ Text Colors */
+.text-primary-title {
+  color: #183b56;
+}
+
+.text-secondary {
+  color: #959ead !important;
+}
+
+.text-warning {
+  color: #ff9f00 !important;
+}
+
+/* ✅ Card Shadow Enhancement */
+.shadow {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* ✅ Blog Image */
+img {
+  object-fit: cover;
+}
+
+/* ✅ Hover Effect */
+a:hover {
+  color: #183b56 !important;
+}
