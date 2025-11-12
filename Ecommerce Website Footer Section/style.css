@@ -1,0 +1,48 @@
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #0d2436;
+}
+
+.bg-dark-blue {
+  background-color: #152c3e;
+}
+
+.footer-logo {
+  width: 60px;
+}
+
+.text-muted {
+  color: #5a7184 !important;
+}
+
+.text-light {
+  color: #ffffff !important;
+}
+
+.text-primary {
+  color: #007bff !important;
+}
+
+.text-danger {
+  color: #ff0000 !important;
+}
+
+.social-icon {
+  color: #5a7184;
+  font-size: 1.2rem;
+  background-color: rgba(255, 255, 255, 0.08);
+  padding: 10px;
+  border-radius: 50%;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.social-icon:hover {
+  color: #ffffff;
+  background-color: #007bff;
+}
+
+.footer-divider {
+  border-color: #5a7184;
+  opacity: 0.3;
+}
