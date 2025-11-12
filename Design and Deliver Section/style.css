@@ -1,0 +1,20 @@
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #f9fbfe;
+  color: #323f4b;
+}
+
+/* ✅ Heading styling */
+.section-heading {
+  color: #323f4b;
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+
+/* ✅ Paragraph styling */
+.section-text {
+  color: #7b8794;
+  font-size: 0.95rem;
+  max-width: 400px;
+  margin: 0 auto;
+}
