@@ -1,1 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <style>
+    .bold-text {
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ✔ Only one button with data-target -->
+  <button type="button" class="btn btn-primary mt-5 ml-5" data-toggle="modal" data-target="#myModal">
+    Click Here
+  </button>
+
+  <!-- ✔ modal + fade -->
+  <div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <!-- ✔ modal-header with h1 -->
+        <div class="modal-header">
+          <h1>Important Info</h1>
+        </div>
+
+        <!-- ✔ modal-body with 2+ paragraphs and one bold -->
+        <div class="modal-body">
+          <p class="bold-text">This paragraph is bold.</p>
+          <p>This is another paragraph with normal text.</p>
+        </div>
+
+        <!-- ✔ modal-footer with at least 2 buttons -->
+        <div class="modal-footer">
+          <button class="btn btn-secondary">Close</button>
+          <button class="btn btn-primary">OK</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
 
